@@ -1,11 +1,9 @@
 package SpaceInvaders.Users;
 
 //score data collection
-import SpaceInvaders.Util.DBConnect;
 
 public class Score {
 
-    private static boolean submitted = true;
     private static int score = 0;
     private static int kills = 0;
     private static int powerUps = 0;
@@ -15,7 +13,6 @@ public class Score {
      * clear current score
      */
     public static void reset() {
-        submitted = false;
         score = 0;
         kills = 0;
         powerUps = 0;
@@ -88,20 +85,4 @@ public class Score {
         return powerUps;
     }
 
-    /**
-     * Submit score to database
-     *
-     * @return return true if score has not been previously submitted, else
-     * returns false
-     */
-    public static boolean submit() {
-        if (submitted) {
-            return false;
-        } else {
-            DBConnect.submitScore(User.getUserID(), score, kills, powerUps, deaths);
-
-            submitted = true;
-            return true;
-        }
-    }
 }

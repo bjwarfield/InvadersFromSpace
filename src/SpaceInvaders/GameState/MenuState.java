@@ -6,7 +6,6 @@ import SpaceInvaders.Util.Sprite;
 import SpaceInvaders.Main.ResourceFactory;
 import SpaceInvaders.TileMap.Background;
 import SpaceInvaders.Users.Score;
-import SpaceInvaders.Users.UserControlPanel;
 import SpaceInvaders.Util.Font;
 import java.awt.event.KeyEvent;
 
@@ -17,10 +16,7 @@ public class MenuState extends GameState {
 
     //background image class
     private Background bg;
-
-    private UserControlPanel ucp = null;
     private EntityListEditor ele = null;
-
     //menu selection
     private int currentChoice = 0;
     private String[] option = {
@@ -110,15 +106,6 @@ public class MenuState extends GameState {
             Score.reset();
         }
         if (currentChoice == 1) {
-            //user login
-            if (ucp == null) {
-                ucp = new UserControlPanel();
-            }
-            ResourceFactory.get().getGameWindow().setVisable(false);
-            ucp.setVisible(true);
-            ucp.requestFocus();
-        }
-        if (currentChoice == 2) {
             //level editor
             if (ele == null) {
                 ele = new EntityListEditor();
@@ -126,7 +113,7 @@ public class MenuState extends GameState {
             ele.setVisible(true);
             ele.requestFocus();
         }
-        if (currentChoice == 3) {
+        if (currentChoice == 2) {
             //Quit
             System.exit(0);
         }

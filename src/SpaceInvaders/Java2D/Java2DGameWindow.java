@@ -3,7 +3,6 @@ package SpaceInvaders.Java2D;
 import SpaceInvaders.GameState.GameStateManager;
 import SpaceInvaders.Main.GameWindow;
 import SpaceInvaders.Main.GameWindowCallback;
-import SpaceInvaders.Users.Score;
 import SpaceInvaders.Util.Keyboard;
 import SpaceInvaders.Util.SystemTimer;
 import java.awt.Canvas;
@@ -113,12 +112,6 @@ public class Java2DGameWindow extends Canvas implements GameWindow {
         frame.addWindowListener(new WindowAdapter() {
             @Override
             public void windowClosing(WindowEvent e) {
-                new Thread() {
-                    @Override
-                    public void run() {
-                        Score.submit();
-                    }
-                }.start();
 
                 if (callback != null) {
                     callback.windowClosed();

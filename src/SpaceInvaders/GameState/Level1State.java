@@ -20,7 +20,7 @@ import java.util.Random;
 public class Level1State extends GameState {
 
     //random number generator
-    public static final Random random = new Random();
+    public static final Random RANDOM = new Random();
 
     //game window
     private final GameWindow window = ResourceFactory.get().getGameWindow();
@@ -44,7 +44,6 @@ public class Level1State extends GameState {
     private EntityMap entityMap;
 
     // The entity representing the player
-//    private Entity ship1;
     private Entity carrier;
 
     private Thread submitScore;
@@ -81,12 +80,6 @@ public class Level1State extends GameState {
 
         up = down = left = right = trigger = false;
 
-        submitScore = new Thread() {
-            @Override
-            public void run() {
-                Score.submit();
-            }
-        };
 
         //add player
         PlayerEntity ship = new PlayerEntity(

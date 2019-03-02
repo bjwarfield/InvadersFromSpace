@@ -53,7 +53,6 @@ public class GameStateManager {
     //@param game graphics context
     public void gameRender() {
         gameStates.get(currentState).gameRender();
-        armaRed.draw(User.getUserName(), 5, 0);
     }
 
     //pass keypress to curent gamestate
