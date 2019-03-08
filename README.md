@@ -19,5 +19,8 @@ Top-Down SHMUP (Shoot-em-up). Shoot enemies ships while avoiding incoming fire. 
 + rank: Difficulty modifier
 + spawnX/SpawnY: Position to spawn emeny
 
+## Requirements
+[Java](https://www.java.com/en/download/)
+
 ## Release
 Download and play [Here](https://github.com/bjwarfield/InvadersFromSpace/releases)
